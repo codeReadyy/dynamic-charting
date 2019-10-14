@@ -1,0 +1,41 @@
+@import './../../../styles.scss';
+input:focus { 
+    box-shadow: 0 1px 1px $primary-color, 0 0 1px $primary-color;
+    outline: 0 none;}
+.online {
+    width: 7px;
+    background: green;
+    height: 7px;
+    border: 1px solid green;
+    border-radius: 5px;
+    float: left;
+}
+
+.offline {
+    width: 7px;
+    background: red;
+    height: 7px;
+    border: 1px solid red;
+    border-radius: 5px;
+    float: left;
+}
+
+.search-div{
+    padding: 1rem;
+    @extend .text;
+    @extend .text-regular;
+}
+
+.search-box{
+    height: 1.5rem;
+    width: 15rem;
+}
+
+.bottom-shadow{
+    -webkit-box-shadow: 0 6px 5px -6px $primary-color;
+       -moz-box-shadow: 0 6px 5px -6px $primary-color;
+            box-shadow: 0 6px 5px -6px $primary-color;
+}
+.user-row:hover{
+    background: #0088cc1a
+}

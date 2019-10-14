@@ -1,0 +1,61 @@
+<div class="flex flex--middle flex--row border-bottom" style="padding: 1rem;">
+  <button (click)="scrolled = 'top';" value="older" class="primary-button hand-cursor">Older Data</button>
+  <button (click)="scrolled = 'bottom';" value="Latest" class="primary-button hand-cursor">Latest Data</button>
+  <button (click)="scrolled = 'stop';" value="Latest" class="primary-button hand-cursor">Free Scroll</button>
+  <div class="flex flex__item flex--center"><span class="text text-regular">Live OHLC Data   <span class="text-medium">(click on column to sort)</span></span></div>
+</div>
+ <div class="bottom-shadow primary-text flex flex--row flex--middle flex--center border-bottom text-regular hand-cursor" style="height: 3.0rem;">
+   <div class="flex__item text-center flex flex--center flex--middle" (click)="sort('Open');">	
+     <span>Open</span>
+     <div *ngIf="open_sort == -1" class="arrow-down"></div>
+     <div *ngIf="open_sort == 1" class="arrow-up"></div>
+   </div>
+   <div class="flex__item text-center flex flex--center flex--middle" (click)="sort('High');">	
+     <span>High</span>
+     <div *ngIf="high_sort == -1" class="arrow-down"></div>
+     <div *ngIf="high_sort == 1" class="arrow-up"></div>
+   </div>
+   <div class="flex__item text-center flex flex--center flex--middle" (click)="sort('Low');">	
+     <span>Low</span>
+     <div *ngIf="low_sort == -1" class="arrow-down"></div>
+     <div *ngIf="low_sort == 1" class="arrow-up"></div>
+   </div>
+   <div class="flex__item text-center flex flex--center flex--middle" (click)="sort('Close');">	
+     <span>Close</span>
+     <div *ngIf="close_sort == -1" class="arrow-down"></div>
+     <div *ngIf="close_sort == 1" class="arrow-up"></div>
+   </div>
+   <div class="flex__item text-center flex flex--center flex--middle" (click)="sort('Volume');">	
+     <span>Volume</span>
+     <div *ngIf="volume_sort == -1" class="arrow-down"></div>
+     <div *ngIf="volume_sort == 1" class="arrow-up"></div>
+   </div>
+   <div class="flex__item text-center flex flex--center flex--middle" (click)="sort('Time');">	
+     <span>Time</span>
+     <div *ngIf="time_sort == -1" class="arrow-down"></div>
+     <div *ngIf="time_sort == 1" class="arrow-up"></div>
+   </div>
+ </div>
+ <div class="flex--col" id="data-list" style="height: 26rem; overflow-y: auto;">
+   <div class="user-row border-bottom flex--middle flex flex--row flex--center text text-reading" 
+     *ngFor="let item of gridData | sort:path:order" style="height: 3.0rem;">
+       <div class="flex__item text-center text" >	
+         <span>{{item.Open}}</span>
+       </div>
+       <div class="flex__item text-center text ">	
+         <span>{{item.High}}</span>
+       </div>
+       <div class="flex__item text-center text ">	
+         <span>{{item.Low}}</span>
+       </div>
+       <div class="flex__item text-center text ">	
+         <span>{{item.Close}}</span>
+       </div>
+       <div class="flex__item text-center text ">	
+         <span>{{item.Volume}}</span>
+       </div>
+       <div class="flex__item text-center text ">	
+         <span>{{item.Time}}</span>
+       </div>
+   </div>
+ </div>

@@ -1,0 +1,30 @@
+<div class="tab-panel">
+  <header class="flex flex--row">
+      <div class="flex flex--row flex--middle">
+          <div class="tab-button" [ngClass]="{'tab-button-selected':tabSelected==='home'}" (click)="selectTab('home')">
+          Home
+          </div>
+          <div style="width:1px;background:#888888;margin:10px;height:32px;"></div>
+      </div>
+      <div class="flex flex--row flex--middle">
+          <div class="tab-button" [ngClass]="{'tab-button-selected':tabSelected==='chart'}" (click)="selectTab('chart')">
+          Chart
+          </div>
+          <div style="width:1px;background:#888888;margin:10px;height:32px;"></div>
+      </div>
+      <div class="flex flex--row flex--middle">
+          <div class="tab-button" [ngClass]="{'tab-button-selected':tabSelected==='grid'}" (click)="selectTab('grid')">
+          Live Table
+          </div>
+          <div style="width:1px;background:#888888;margin:10px;height:32px;"></div>
+      </div>
+      <div class="flex flex--row flex--middle">
+          <div class="tab-button" [ngClass]="{'tab-button-selected':tabSelected==='users'}" (click)="selectTab('users')">
+          Users
+          </div>
+          <div style="width:1px;background:#888888;margin:10px;height:32px;"></div>
+      </div>
+      
+  </header>
+  <router-outlet></router-outlet>
+</div>

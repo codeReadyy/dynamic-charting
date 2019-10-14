@@ -1,0 +1,39 @@
+@import './../../../styles.scss';
+
+.bottom-shadow{
+    -webkit-box-shadow: 0 8px 6px -6px $primary-color;
+       -moz-box-shadow: 0 8px 6px -6px $primary-color;
+            box-shadow: 0 8px 6px -6px $primary-color;
+}
+
+.user-row:hover{
+    background: #0088cc1a
+}
+.primary-button{
+    border: 1px solid $primary-color;
+    color: $primary-color; 
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background: $background;
+    &:hover{
+        border: 1px solid $primary-color;
+        background: $primary-color;
+        color: $background;
+    }
+}
+.arrow{
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    margin-left: 1rem;
+}
+.arrow-up {
+    @extend .arrow;
+    border-bottom: 5px solid $primary-color;
+  }
+
+  .arrow-down {
+    @extend .arrow;
+    border-top: 5px solid $primary-color;
+  }

@@ -1,0 +1,40 @@
+@import './../../../styles.scss';
+
+.tab-panel{
+    @extend .flex;
+    @extend .flex--col;
+    margin: 10px;
+    border-top:none;
+    //@extend .border;
+    background: $background;
+    box-shadow: 1px 4px 3px $border-color;
+    //min-height: 400px;
+    header{
+        color: $text-color;
+        height: 50px;
+        @extend .text-large;
+        text-transform: capitalize;
+        @extend .border-bottom;
+        @extend .flex;
+        @extend .flex--row;
+        @extend .flex--middle;
+    }
+    chart{
+        padding: 10px;
+    }
+}
+
+.tab-button{
+    margin: 0 20px;
+    padding: 5px;
+    font-size: 16px;
+    color: #666;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.tab-button:hover, .tab-button-selected{
+    @extend .tab-button;
+    color: $primary-color;
+    border-bottom: 1px solid $primary-color; 
+}

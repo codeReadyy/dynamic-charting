@@ -1,0 +1,54 @@
+<div class="search-div border-bottom">
+ <span class="text">Search by</span> <input class="search-box text" type="text" [(ngModel)]="searchText"  placeholder="Name, email, address or tags">
+</div>
+<div class="bottom-shadow primary-text flex flex--row flex--middle flex--center border-bottom text-regular" style="height: 3.0rem;">
+  <div class="text-center " style="width: 3rem;">	
+    <span></span>
+  </div>
+  <div class="flex__item text-center " >	
+    <span>Name</span>
+  </div>
+  <div class="flex__item text-center " >	
+    <span>Company</span>
+  </div>
+  <div class="flex__item text-center " >	
+    <span>Email</span>
+  </div>
+  <div class="flex__item text-center " >	
+    <span>Phone</span>
+  </div>
+  <div class="flex__item text-center " >	
+    <span>Balance</span>
+  </div>
+  <div class="flex__item text-center " >	
+    <span>Address</span>
+  </div>
+</div>
+<div class="flex--col" style="height: 25rem; overflow-y: auto;">
+  <div class="user-row border-bottom flex--middle flex flex--row flex--center text text-reading" 
+    *ngFor="let item of dummyData | search:searchText" style="height: 3.0rem;">
+      <div class="text-center text flex flex--center " style="width: 3rem;">	
+        <div *ngIf="item.isActive" class="online"></div>
+        <div *ngIf="!item.isActive" class="offline"></div>
+        <!-- <img src="{{item.picture}}"> -->
+      </div>
+      <div class="flex__item text-center text " >	
+        <span>{{item.name.first}} {{item.name.last}}</span>
+      </div>
+      <div class="flex__item text-center text ">	
+        <span>{{item.company}}</span>
+      </div>
+      <div class="flex__item text-center text ">	
+        <span>{{item.email}}</span>
+      </div>
+      <div class="flex__item text-center text ">	
+        <span>{{item.phone}}</span>
+      </div>
+      <div class="flex__item text-center text ">	
+        <span>{{item.balance}}</span>
+      </div>
+      <div class="flex__item text-center text ">	
+        <span>{{item.address.house_number}}, {{item.address.street}}, {{item.address.city}},{{item.address.state}},{{item.address.pincode}}</span>
+      </div>
+  </div>
+</div>
